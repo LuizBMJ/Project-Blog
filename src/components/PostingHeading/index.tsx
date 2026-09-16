@@ -12,11 +12,11 @@ export function PostingHeading({
   as: Tag = 'h1',
 }: PostingHeadingProps) {
   const headingClassesMap = {
-    h1: 'text-4xl  sm:text-5xl',
-    h2: 'text-2xl  sm:text-4xl',
+    h1: 'text-4xl  sm:text-5xl font-extrabold',
+    h2: 'text-2xl font-bold',
   }
 
-  const commonClasses = 'font-extrabold'
+  const commonClasses = ''
 
   return (
     <Tag className={`${headingClassesMap[Tag]} ${commonClasses}`}>
