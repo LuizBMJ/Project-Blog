@@ -1,7 +1,6 @@
 import { postRepository } from '@/src/repositories/post'
 import { PostCoverImage } from '../PostCoverImage'
-import { PostingHeading } from '../PostingHeading'
-import { formatDatetime, formatRelativeDate } from '@/src/utils/format-datetime'
+import { PostSummary } from '../PostSummary'
 
 export async function PostsList() {
   const posts = await postRepository.findAll()
@@ -24,19 +23,13 @@ export async function PostsList() {
                 alt: post.title,
               }}
             />
-            <div className="flex flex-col gap-4 sm:justify-center">
-              <time
-                dateTime={formatDatetime(post.createdAt)}
-                className="text-slate-600 text-sm"
-                title={formatRelativeDate(post.createdAt)}
-              >
-                {formatDatetime(post.createdAt)}
-              </time>
-              <PostingHeading as="h2" url={PostLink}>
-                {post.title}
-              </PostingHeading>
-              <p>{post.excerpt}</p>
-            </div>
+            <PostSummary
+              postLink={PostLink}
+              postHeading="h2"
+              createdAt={post.createdAt}
+              excerpt={post.excerpt}
+              title={post.title}
+            />
           </div>
         )
       })}
