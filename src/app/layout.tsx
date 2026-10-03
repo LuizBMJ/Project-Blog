@@ -1,11 +1,14 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import { Header } from '../components/Header';
-import { Footer } from '../components/Footer';
-import { Container } from '../components/Container';
+import { Header } from '../components/Header'
+import { Footer } from '../components/Footer'
+import { Container } from '../components/Container'
 
 export const metadata: Metadata = {
-  title: 'The blog - Este é um blog com Next.js',
+  title: {
+    default: 'The blog - Este é um blog com Next.js',
+    template: '%s | The blog',
+  },
   description: 'Essa seria a descrição dessa página.',
 }
 
@@ -20,7 +23,7 @@ export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
         <Container>
           <Header></Header>
           {children}
-          
+
           <Footer></Footer>
         </Container>
       </body>
