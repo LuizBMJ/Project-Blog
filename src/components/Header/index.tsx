@@ -1,4 +1,5 @@
 import clsx from 'clsx'
+import Link from 'next/link'
 
 export function Header() {
   console.log('HEADER')
@@ -18,7 +19,7 @@ export function Header() {
           'lg:py-12',
         )}
       >
-        The Blog
+        <Link href="/">The Blog</Link>
       </h1>
     </header>
   )

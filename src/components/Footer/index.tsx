@@ -1,12 +1,11 @@
-import clsx from 'clsx'
+import Link from 'next/link'
 
 export function Footer() {
-  console.log('FOOTER')
-
   return (
-    <footer>
-      <p className={clsx('text-6xl', 'font-bold', 'text-center', 'py-8')}>
-        Footer
+    <footer className="pb-16 text-center">
+      <p>
+        <span>Copyright &copy; {new Date().getFullYear()} - </span>
+        <Link href="/">The Blog</Link>
       </p>
     </footer>
   )
