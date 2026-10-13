@@ -1,16 +1,16 @@
 import Link from 'next/link'
 
-type PostingHeadingProps = {
+type PostHeadingProps = {
   children: React.ReactNode
   url: string
   as?: 'h1' | 'h2'
 }
 
-export function PostingHeading({
+export function PostHeading({
   children,
   url,
   as: Tag = 'h1',
-}: PostingHeadingProps) {
+}: PostHeadingProps) {
   const headingClassesMap = {
     h1: 'text-4xl  sm:text-5xl font-extrabold',
     h2: 'text-2xl font-bold',
